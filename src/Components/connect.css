@@ -1,0 +1,14 @@
+@keyframes fadeSlideIn {
+  0% {
+    transform: translateY(20px); /* Slight movement from bottom */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* No movement */
+    opacity: 1;
+  }
+}
+
+#contact {
+  animation: fadeSlideIn 1s ease-out;
+}

@@ -1,0 +1,31 @@
+.srit-logo{
+  height: 30%;
+  width: 30%;
+}
+/* Custom Project Section Styling */
+.card {
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+}
+
+.card-text ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.card-body {
+  padding: 1.5rem;
+}

@@ -1,0 +1,304 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #8e44ad 0%, #ec6f66 100%); /* Purple to Pink Gradient */
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for more elegance */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Navbar Scroll Effect */
+.scrolled {
+  background: linear-gradient(90deg, #9b59b6 0%, #e74c3c 100%); /* Lighter Purple to Red Gradient */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow on scroll */
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+  font-size: 18px;
+}
+
+/* Navigation Links */
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Underline Hover Effect */
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #f39c12; /* Golden Yellow */
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-menu a:hover {
+  color: #f39c12; /* Golden Yellow */
+  background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* Logo */
+.logo {
+  height: 50px;
+  width: 50px;
+}
+
+/* Animated Button */
+.nav-connect {
+  border-radius: 30px;
+  background: linear-gradient(90deg, #ec6f66 0%, #8e44ad 100%); /* Pink to Purple Gradient */
+  padding: 12px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.nav-connect:hover {
+  background: linear-gradient(90deg, #8e44ad 0%, #ec6f66 100%); /* Reverse gradient on hover */
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+}
+
+/* Floating text animation */
+.floating-text {
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Navbar */
+@media (max-width: 992px) {
+  .nav-menu {
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.8); /* Darker background */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    display: none;
+  }
+
+  .nav-menu.show {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .nav-menu a {
+    font-size: 18px;
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Home Section Styling */
+#home {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Gradient background */
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Heading Styles */
+#home h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+#home h2 {
+  font-size: 2.5rem;
+  color: #3498db; /* Primary Color */
+}
+
+#home h3 {
+  font-size: 1.5rem;
+  color: #ecf0f1; /* Light Text */
+  margin-top: 10px;
+}
+
+/* Button Styles */
+.btn-animate {
+  position: relative;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-animate:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Specific Colors */
+.btn-danger {
+  background: #e74c3c;
+}
+
+.btn-info {
+  background: #1abc9c;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  #home h1 {
+    font-size: 3rem;
+  }
+
+  #home h2 {
+    font-size: 2rem;
+  }
+
+  #home h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Image styling for smaller screens */
+  #home img {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 576px) {
+  #home h1 {
+    font-size: 2.5rem;
+  }
+
+  #home h2 {
+    font-size: 1.8rem;
+  }
+
+  #home h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Image styling for smaller screens */
+  #home img {
+    max-width: 100%;
+  }
+
+  .btn-animate {
+    font-size: 16px;
+    padding: 10px 25px;
+  }
+}
+
+/* Contact Me Button Styles */
+.btn-contact {
+  background: #8e44ad; /* Purple Color */
+  color: white;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.btn-contact:hover {
+  background: #9b59b6; /* Lighter Purple on Hover */
+  transform: scale(1.1);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+/* Navigation Links */
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: color 0.4s ease, background-color 0.4s ease;
+}
+
+/* Hover Effects */
+.nav-menu a:hover {
+  color: #f39c12; /* Golden Yellow */
+  background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
+/* Underline Hover Effect */
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #f39c12; /* Golden Yellow */
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-menu a:hover::after {
+  width: 100%; /* Underline expands on hover */
+}
