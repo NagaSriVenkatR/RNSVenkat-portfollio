@@ -1,14 +1,129 @@
+/* Contact Section Styling */
+.connect-section {
+  background: linear-gradient(to right, #eef2f3, #8e9eab);
+  padding: 50px 0;
+  animation: fadeSlideIn 1s ease-out;
+}
+
+/* Section Title */
+.connect-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Form Container */
+.connect-container {
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  margin: 0 auto;
+}
+
+.connect-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Form Styling */
+.connect-input {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.connect-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Error Messages */
+.connect-error {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #d9534f;
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Submit Button */
+.connect-button {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  width: 100%;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.connect-button:hover {
+  background: linear-gradient(135deg, #0056b3, #003d82);
+  transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .connect-container {
+    padding: 20px;
+  }
+
+  .connect-input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .connect-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Animations */
 @keyframes fadeSlideIn {
-  0% {
-    transform: translateY(20px); /* Slight movement from bottom */
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
   }
-  100% {
-    transform: translateY(0); /* No movement */
+  to {
     opacity: 1;
   }
 }
 
-#contact {
-  animation: fadeSlideIn 1s ease-out;
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
 }

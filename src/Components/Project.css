@@ -1,31 +1,90 @@
-.srit-logo{
-  height: 30%;
-  width: 30%;
+/* Project Section Styling */
+#projects {
+  background-color: #f8f9fa;
 }
-/* Custom Project Section Styling */
+
+#projects h2 {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #333;
+}
+
 .card {
-  border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.card-title {
-  font-size: 1.2rem;
-}
-
-.card-subtitle {
-  font-size: 1rem;
-}
-
-.card-text ul {
-  list-style-type: disc;
-  margin-left: 20px;
+.card-img-top {
+  object-fit: cover;
+  height: 200px; /* Consistent image height */
 }
 
 .card-body {
-  padding: 1.5rem;
+  padding: 20px;
+}
+
+.card-title {
+  font-weight: 600;
+  color: #333;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.card ul {
+  padding-left: 20px;
+}
+
+.card ul li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.card ul li::before {
+  content: "✔";
+  color: #28a745;
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-subtitle {
+    font-size: 13px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
 }

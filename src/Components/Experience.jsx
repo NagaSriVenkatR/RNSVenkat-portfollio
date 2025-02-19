@@ -1,59 +1,96 @@
 import React from "react";
 import './experience.css'
+import { BiCheckCircle } from "react-icons/bi";
 function Experience() {
   return (
     <div>
       <section id="experience" className="bg-light py-5">
         <div className="container">
-          <h2 className="text-center mb-5 mt-5">Experience</h2>
-          <div className="row">
-            <div className="col-md p-5">
-              <div className="card border-light shadow-sm">
-                <div className="card-body">
-                  <h5 className="card-title">Frontend Developer</h5>
-                  <h5 className="card-title text-muted">Ebrain Technology</h5>
-                  <p className="card-text">
-                    <ul className="list-unstyled">
-                      <li>
-                        <i className="bi bi-check-circle"></i> Designed and
-                        implemented responsive layouts using HTML, CSS,
-                        JavaScript, and Bootstrap, ensuring seamless user
-                        experiences across various devices and browsers.
-                      </li>
-                      <li>
-                        <i className="bi bi-check-circle"></i> Developed dynamic
-                        and reusable components using React.js, optimizing
-                        website interactivity and functionality.
-                      </li>
-                      <li>
-                        <i className="bi bi-check-circle"></i> Leveraged
-                        Bootstrap’s grid system and CSS media queries to create
-                        adaptable designs for mobile and desktop interfaces.
-                      </li>
-                      <li>
-                        <i className="bi bi-check-circle"></i> Collaborated with
-                        senior developers and designers, adhering to best coding
-                        practices to maintain clean, maintainable, and scalable
-                        code.
-                      </li>
-                      <li>
-                        <i className="bi bi-check-circle"></i> Integrated
-                        RESTful APIs for seamless data interaction and improved
-                        application efficiency.
-                      </li>
-                      <li>
-                        <i className="bi bi-check-circle"></i> Continuously
-                        enhanced technical skills by mastering React hooks,
-                        state management, and conditional rendering techniques.
-                      </li>
-                      <li>
-                        <i className="bi bi-check-circle"></i> Conducted code
-                        reviews and performance optimization to deliver
-                        efficient and high-performing web applications.
-                      </li>
-                    </ul>
+          <h2 className="text-center mb-5 mt-5 text-uppercase fw-bold">
+            Experience
+          </h2>
+          <div className="row justify-content-center">
+            <div className="col-lg-8 col-md-10 col-sm-12">
+              <div className="card experience-card border-0 shadow-lg">
+                <div className="card-body p-4">
+                  <h5 className="card-title fw-bold text-primary">
+                    Frontend Developer
+                  </h5>
+                  <h6 className="card-subtitle mb-3 text-secondary">
+                    Ebrain Technology
+                  </h6>
+                  <ul className="list-unstyled">
+                    <li className="d-flex align-items-start">
+                      <BiCheckCircle className="text-success me-2 mt-1" />
+                      <span>
+                        Designed and implemented responsive layouts using
+                        <strong> HTML, CSS, JavaScript, and Bootstrap</strong>,
+                        ensuring seamless experiences across devices.
+                      </span>
+                    </li>
+                    <li className="d-flex align-items-start">
+                      <BiCheckCircle className="text-success me-2 mt-1" />
+                      <span>
+                        Developed dynamic and reusable components using
+                        <strong> React.js</strong>, optimizing website
+                        interactivity.
+                      </span>
+                    </li>
+                    <li className="d-flex align-items-start">
+                      <BiCheckCircle className="text-success me-2 mt-1" />
+                      <span>
+                        Used Bootstrap’s grid system & CSS media queries to
+                        create adaptable UI for mobile and desktop users.
+                      </span>
+                    </li>
+                    <li className="d-flex align-items-start">
+                      <BiCheckCircle className="text-success me-2 mt-1" />
+                      <span>
+                        Integrated <strong>Redux Saga</strong> for state
+                        management, improving data consistency across
+                        components.
+                      </span>
+                    </li>
+                    <li className="d-flex align-items-start">
+                      <BiCheckCircle className="text-success me-2 mt-1" />
+                      <span>
+                        Implemented RESTful API calls to fetch and display
+                        real-time data, improving page performance.
+                      </span>
+                    </li>
+                    <li className="d-flex align-items-start">
+                      <BiCheckCircle className="text-success me-2 mt-1" />
+                      <span>
+                        Collaborated with UX designers to improve UI/UX,
+                        increasing user engagement by <strong>20%</strong>.
+                      </span>
+                    </li>
+                    <li className="d-flex align-items-start">
+                      <BiCheckCircle className="text-success me-2 mt-1" />
+                      <span>
+                        Debugged and optimized code, reducing page load time by{" "}
+                        <strong>30%</strong>.
+                      </span>
+                    </li>
+                    <li className="d-flex align-items-start">
+                      <BiCheckCircle className="text-success me-2 mt-1" />
+                      <span>
+                        Implemented authentication and role-based access control
+                        using Firebase.
+                      </span>
+                    </li>
+                    <li className="d-flex align-items-start">
+                      <BiCheckCircle className="text-success me-2 mt-1" />
+                      <span>
+                        Conducted <strong>code reviews</strong> and assisted
+                        junior developers in improving code quality.
+                      </span>
+                    </li>
+                  </ul>
+
+                  <p className="card-text text-muted">
+                    <strong>2024 - Current</strong>
                   </p>
-                  <p className="card-text">2024 - Current</p>
                 </div>
               </div>
             </div>

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import './connect.css'
+import { FaPaperPlane } from "react-icons/fa"; // Importing icon
+import "./connect.css";
+
 function Connect() {
   const [formData, setFormData] = useState({
     name: "",
@@ -18,11 +20,11 @@ function Connect() {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.name) newErrors.name = "Name is required.";
-    if (!formData.email) newErrors.email = "Email is required.";
+    if (!formData.name.trim()) newErrors.name = "Name is required.";
+    if (!formData.email.trim()) newErrors.email = "Email is required.";
     else if (!/\S+@\S+\.\S+/.test(formData.email))
       newErrors.email = "Please enter a valid email.";
-    if (!formData.message) newErrors.message = "Message is required.";
+    if (!formData.message.trim()) newErrors.message = "Message is required.";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -30,6 +32,7 @@ function Connect() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateForm()) return;
+
     const whatsappMessage = `Hello, my name is ${formData.name}. My email is ${formData.email}. I would like to say: ${formData.message}`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
     const phoneNumber = "917671860530";
@@ -41,66 +44,61 @@ function Connect() {
   };
 
   return (
-    <section
-      id="contact"
-      className="py-5"
-      style={{
-        backgroundColor: "#f1f1f1",
-        animation: "fadeSlideIn 1s ease-out",
-      }}
-    >
-      <div className="container">
-        <h2 className="text-center mb-4">Contact Me</h2>
+    <section id="contact" className="connect-section">
+      <div className="connect-container mt-5">
         <form onSubmit={handleSubmit}>
+          <h2 className="connect-title mt-5">Contact Me</h2>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">
               Name
             </label>
             <input
               type="text"
-              className="form-control"
+              className={`connect-input ${errors.name ? "is-invalid" : ""}`}
               id="name"
               placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
-              required
             />
-            {errors.name && <div className="text-danger">{errors.name}</div>}
+            {errors.name && <div className="connect-error">{errors.name}</div>}
           </div>
+
           <div className="mb-3">
             <label htmlFor="email" className="form-label">
               Email
             </label>
             <input
               type="email"
-              className="form-control"
+              className={`connect-input ${errors.email ? "is-invalid" : ""}`}
               id="email"
               placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
-              required
             />
-            {errors.email && <div className="text-danger">{errors.email}</div>}
+            {errors.email && (
+              <div className="connect-error">{errors.email}</div>
+            )}
           </div>
+
           <div className="mb-3">
             <label htmlFor="message" className="form-label">
               Message
             </label>
             <textarea
-              className="form-control"
+              className={`connect-input ${errors.message ? "is-invalid" : ""}`}
               id="message"
               rows="3"
               placeholder="Your Message"
               value={formData.message}
               onChange={handleChange}
-              required
             ></textarea>
             {errors.message && (
-              <div className="text-danger">{errors.message}</div>
+              <div className="connect-error">{errors.message}</div>
             )}
           </div>
-          <button type="submit" className="btn btn-primary">
-            Send WhatsApp Message
+
+          <button type="submit" className="connect-button">
+            <FaPaperPlane /> Send WhatsApp Message
           </button>
         </form>
       </div>

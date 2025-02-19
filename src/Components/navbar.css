@@ -535,26 +535,57 @@
     display: flex;
   }
 
-  .button-group {
+  /* .button-group {
     display: flex;
     gap: 40px !important;
     justify-content: center !important;
     margin-top: 20px;
     padding: 40px 180px;
-  }
+  } */
 }
-@media screen and (min-width:300px) and (max-width:330px) {
+/* Default Styling for button-group */
+.button-group {
+  display: flex;
+  justify-content: center !important; /* Centers horizontally */
+  align-items: center !important; /* Centers vertically */
+  flex-wrap: wrap;
+  text-align: center; /* Ensures text is aligned in center */
+  width: 100%; /* Full width */
+  margin: 0 auto; /* Centering the container */
+}
+
+/* Small mobile screens (up to 320px) */
+@media screen and (max-width: 320px) {
   .button-group {
-   padding: 20px !important;
+    padding: 10px !important;
   }
 }
-@media screen and (min-width:370px) and (max-width:390px) {
+
+/* Extra small devices (321px - 375px) */
+@media screen and (min-width: 321px) and (max-width: 375px) {
   .button-group {
-   padding: 50px !important;
+    padding: 20px !important;
   }
 }
-@media screen and (min-width:400px) and (max-width:500px) {
+
+/* Small phones (376px - 425px) */
+@media screen and (min-width: 376px) and (max-width: 425px) {
   .button-group {
-   padding: 90px !important;
+    padding: 30px !important;
   }
 }
+
+/* Medium-sized phones (426px - 768px) */
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .button-group {
+    padding: 40px !important;
+  }
+}
+
+/* Larger screens (769px and above) */
+@media screen and (min-width: 769px) {
+  .button-group {
+    padding: 50px !important;
+  }
+}
+

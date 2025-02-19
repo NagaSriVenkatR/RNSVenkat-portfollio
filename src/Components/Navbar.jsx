@@ -66,7 +66,11 @@ function CustomNavbar() {
             </ul>
 
             {/* Contact Button */}
-            <a href="#contact" className="btn-contact">
+            <a
+              href="#contact"
+              className="btn-contact"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Contact Me 📩
             </a>
           </div>
@@ -83,7 +87,7 @@ function CustomNavbar() {
               <h1 className="main-heading">Hi there!</h1>
               <h2 className="name-heading">I'm Naga Sri Venkat R</h2>
               <h3 className="role-heading">Frontend Developer</h3>
-              <div className="button-group d-md-table-cell d-none justify-content-center">
+              <div className="button-group d-md-flex d-none justify-content-center">
                 <a href={RESUME} download className="btn-resume">
                   📄 Resume
                 </a>
@@ -91,7 +95,7 @@ function CustomNavbar() {
                   ⬇️ About Me
                 </a>
               </div>
-              <div className="button-group d-table-cell d-md-none justify-content-center">
+              <div className="button-group d-flex d-md-none justify-content-center">
                 <a href={RESUME} download className="btn-resume">
                   📄
                 </a>

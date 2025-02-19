@@ -1,42 +1,57 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
-import './footer.css'
+import "./footer.css";
+
 function Footer() {
   return (
-    <div>
-      <footer className="bg-dark text-white py-3 text-center">
-        <div className="container">
-          <p>&copy; 2025 R. Nagasri Venkat. All Rights Reserved.</p>
-          <div>
-            <a
-              href="https://www.linkedin.com/in/nagasri-venkat-r-a50402217/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white mx-3"
-            >
-              <FaLinkedin size={30} style={{ color: "#0e76a8" }} />
-            </a>
-            <a
-              href="https://github.com/NagaSriVenkatR"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white mx-3"
-            >
-              <FaGithub size={30} />
-            </a>
-            <a
-              href="https://x.com/Venkatn17033296"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white mx-3"
-            >
-              <FaTwitter size={30} style={{ color: "#1DA1F2" }} />
-            </a>
-          </div>
+    <motion.footer
+      className="footer"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <div className="container text-center">
+        <motion.p
+          className="footer-text"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+        >
+          &copy; 2025 R. Nagasri Venkat. All Rights Reserved.
+        </motion.p>
+        <div className="footer-icons">
+          <motion.a
+            href="https://www.linkedin.com/in/nagasri-venkat-r-a50402217/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <FaLinkedin className="icon linkedin" />
+          </motion.a>
+          <motion.a
+            href="https://github.com/NagaSriVenkatR"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <FaGithub className="icon github" />
+          </motion.a>
+          <motion.a
+            href="https://x.com/Venkatn17033296"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <FaTwitter className="icon twitter" />
+          </motion.a>
         </div>
-      </footer>
-    </div>
+      </div>
+    </motion.footer>
   );
 }
 
-export default Footer
+export default Footer;

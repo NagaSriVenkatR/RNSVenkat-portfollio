@@ -17,8 +17,8 @@ function Aboutme() {
         <div className="row align-items-center">
           {/* Text Content Section */}
           <div className="col-lg-8 p-5 mt-5">
-            <h2 className="display-4 mb-4 font-weight-bold">About Me</h2>
-            <p className="lead text-justify">
+            <h2 className="about-title">About Me</h2>
+            <p className="about-text">
               Hello! I'm a passionate front-end developer skilled in creating
               interactive and responsive web applications. I enjoy solving
               problems and bringing creative designs to life using technologies
@@ -27,17 +27,13 @@ function Aboutme() {
               optimized web applications.
             </p>
             {/* LinkedIn & GitHub Buttons with Motion */}
-            <div className="social-links mt-4 d-none d-lg-table-cell">
+            <div className="social-links mt-4">
               <motion.a
                 href="https://www.linkedin.com/in/nagasri-venkat-r-a50402217/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-linkedin me-3"
-                whileHover={{
-                  scale: 1.1,
-                  boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.3)",
-                  backgroundColor: "#0077b5",
-                }}
+                className="btn btn-linkedin"
+                whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
                 <FaLinkedin size={30} /> LinkedIn
@@ -47,44 +43,10 @@ function Aboutme() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-github"
-                whileHover={{
-                  scale: 1.1,
-                  boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.3)",
-                  backgroundColor: "#333",
-                }}
+                whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
                 <FaGithub size={30} /> GitHub
-              </motion.a>
-            </div>
-            <div className="social-links mt-4 d-table-cell d-lg-none">
-              <motion.a
-                href="https://www.linkedin.com/in/nagasri-venkat-r-a50402217/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-linkedin me-3"
-                whileHover={{
-                  scale: 1.1,
-                  boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.3)",
-                  backgroundColor: "#0077b5",
-                }}
-                transition={{ type: "spring", stiffness: 200 }}
-              >
-                <FaLinkedin size={30} /> 
-              </motion.a>
-              <motion.a
-                href="https://github.com/NagaSriVenkatR"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-github"
-                whileHover={{
-                  scale: 1.1,
-                  boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.3)",
-                  backgroundColor: "#333",
-                }}
-                transition={{ type: "spring", stiffness: 200 }}
-              >
-                <FaGithub size={30} /> 
               </motion.a>
             </div>
           </div>
@@ -94,7 +56,7 @@ function Aboutme() {
             <motion.img
               src={PASS}
               alt="Profile"
-              className="img-fluid rounded-circle passport"
+              className="passport"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
