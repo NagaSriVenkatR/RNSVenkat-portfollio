@@ -102,7 +102,7 @@ function CustomNavbar() {
             </div>
 
             {/* Right Image */}
-            <div className="col-lg-6 text-center">
+            <div className="col-lg-6 text-center mt-3">
               <img src={PASS} alt="Profile" className="profile-img" />
             </div>
           </div>
