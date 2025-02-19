@@ -78,7 +78,7 @@ function CustomNavbar() {
         <div className="container">
           <div className="row align-items-center">
             {/* Left Content */}
-            <div className="col-lg-6 text-lg-start text-center">
+            <div className="col-lg-6 text-lg-start text-center mt-3">
               <p className="intro-text">Welcome to my Portfolio</p>
               <h1 className="main-heading">Hi there!</h1>
               <h2 className="name-heading">I'm Naga Sri Venkat R</h2>
