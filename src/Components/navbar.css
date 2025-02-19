@@ -1,304 +1,560 @@
-/* Global Styles */
-body {
+/* General Reset */
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Navbar Container */
+/* Navbar Styling */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background: linear-gradient(90deg, #8e44ad 0%, #ec6f66 100%); /* Purple to Pink Gradient */
+  background: rgba(20, 20, 20, 0.8);
+  padding: 15px 20px;
   transition: all 0.3s ease-in-out;
-  position: fixed;
-  width: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.navbar.scrolled {
+  background: rgba(10, 10, 10, 0.95);
+}
+
+.navbar-logo {
+  height: 45px;
+}
+
+/* Mobile Menu Toggle */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.navbar-toggler-icon {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  display: block;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon::before {
+  top: -10px;
+}
+
+.navbar-toggler-icon::after {
+  top: 10px;
+}
+
+.navbar-toggler.open .navbar-toggler-icon {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler.open .navbar-toggler-icon::before {
   top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for more elegance */
-  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  transform: rotate(90deg);
 }
 
-/* Navbar Scroll Effect */
-.scrolled {
-  background: linear-gradient(90deg, #9b59b6 0%, #e74c3c 100%); /* Lighter Purple to Red Gradient */
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow on scroll */
-  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+.navbar-toggler.open .navbar-toggler-icon::after {
+  top: 0;
+  transform: rotate(90deg);
 }
 
-/* Navigation Menu */
+/* Navbar Links */
 .nav-menu {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 25px;
   list-style: none;
-  gap: 30px;
+}
+
+.nav-item {
+  display: inline-block;
+}
+
+.nav-link {
+  color: white !important;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #ff4c60 !important;
+}
+
+/* Contact Button */
+.btn-contact {
+  background-color: #ff4c60;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-contact:hover {
+  background-color: #e33b4d;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, #1e1e1e, #121212);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.intro-text {
   font-size: 18px;
 }
 
-/* Navigation Links */
-.nav-menu a {
+.main-heading {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.name-heading {
+  font-size: 36px;
+  color: #ff4c60;
+  font-weight: bold;
+}
+
+.role-heading {
+  font-size: 24px;
+  color: #ccc;
+}
+
+/* Buttons */
+/* Button Container */
+.button-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center !important;
+  padding: 40px 0px;
+}
+
+/* Buttons */
+.btn-resume,
+.btn-about {
+  padding: 12px 25px;
+  border-radius: 5px;
   text-decoration: none;
   color: white;
-  font-weight: 500;
+  font-weight: bold;
   position: relative;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
 }
 
-/* Underline Hover Effect */
-.nav-menu a::after {
+/* Resume Button */
+.btn-resume {
+  background-color: #ff4c60;
+  margin-right: 30px;
+}
+
+/* About Button */
+.btn-about {
+  background-color: #1e90ff;
+}
+
+/* Hover Effect: Scale & Glow */
+.btn-resume:hover,
+.btn-about:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Click Effect: Slight Shrink */
+.btn-resume:active,
+.btn-about:active {
+  transform: scale(0.95);
+}
+
+/* Glowing Border Animation */
+.btn-resume::before,
+.btn-about::before {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 2px;
-  background-color: #f39c12; /* Golden Yellow */
-  transition: width 0.3s ease-in-out;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 80%);
+  transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.4s ease-out;
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
 
-.nav-menu a:hover {
-  color: #f39c12; /* Golden Yellow */
-  background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+/* Activate Glow on Hover */
+.btn-resume:hover::before,
+.btn-about:hover::before {
+  width: 120%;
+  height: 120%;
+  opacity: 1;
 }
 
-.nav-menu a:hover::after {
-  width: 100%;
-}
-
-/* Logo */
-.logo {
-  height: 50px;
-  width: 50px;
-}
-
-/* Animated Button */
-.nav-connect {
-  border-radius: 30px;
-  background: linear-gradient(90deg, #ec6f66 0%, #8e44ad 100%); /* Pink to Purple Gradient */
-  padding: 12px 20px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  color: white;
-  font-weight: bold;
-  border: none;
-  outline: none;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-}
-
-.nav-connect:hover {
-  background: linear-gradient(90deg, #8e44ad 0%, #ec6f66 100%); /* Reverse gradient on hover */
-  transform: scale(1.05);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
-}
-
-/* Floating text animation */
-.floating-text {
-  animation: floatAnimation 3s ease-in-out infinite;
-}
-
-@keyframes floatAnimation {
-  0% {
+/* Button Animation (Bounce on Load) */
+@keyframes bounce {
+  0%, 100% {
     transform: translateY(0);
-    opacity: 1;
   }
   50% {
-    transform: translateY(-10px);
-    opacity: 0.7;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
+    transform: translateY(-5px);
   }
 }
 
-/* Responsive Navbar */
-@media (max-width: 992px) {
-  .nav-menu {
+.btn-resume,
+.btn-about {
+  animation: bounce 1.5s ease-in-out infinite alternate;
+}
+
+
+/* Profile Image */
+.profile-img {
+  max-width: 50%;
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-list {
     flex-direction: column;
-    gap: 20px;
-    background: rgba(0, 0, 0, 0.8); /* Darker background */
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    padding: 15px;
+    align-items: center;
+  }
+.btn-resume {
+  margin-right: 30px;
+}
+  .nav-menu {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    background: rgba(20, 20, 20, 0.9);
+    padding: 20px;
+    text-align: center;
   }
 
   .nav-menu.show {
     display: flex;
-    animation: fadeIn 0.3s ease-in-out;
   }
-
-  .nav-menu a {
-    font-size: 18px;
-  }
+  .button-group {
+  display: flex;
+  gap: 40px !important;
+  justify-content: center !important;
+  margin-top: 20px;
+  padding: 40px 180px;
+}
+}
+/* 🔹 General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* 🔹 Navbar Styling */
+.navbar {
+  background: rgba(20, 20, 20, 0.85); /* Semi-transparent background */
+  padding: 15px 20px;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(8px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Home Section Styling */
-#home {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Gradient background */
-  color: white;
-  padding: 80px 0;
-  text-align: center;
+/* Navbar on Scroll */
+.navbar.scrolled {
+  background: rgba(10, 10, 10, 0.95);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔹 Navbar Logo */
+.navbar-logo {
+  height: 45px;
+}
+
+/* 🔹 Mobile Menu Toggle */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.navbar-toggler-icon {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  display: block;
   position: relative;
-  z-index: 1;
+  transition: 0.3s ease-in-out;
 }
 
-/* Heading Styles */
-#home h1 {
-  font-size: 4rem;
-  font-weight: 700;
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  transition: 0.3s ease-in-out;
 }
 
-#home h2 {
-  font-size: 2.5rem;
-  color: #3498db; /* Primary Color */
+.navbar-toggler-icon::before {
+  top: -10px;
 }
 
-#home h3 {
-  font-size: 1.5rem;
-  color: #ecf0f1; /* Light Text */
-  margin-top: 10px;
+.navbar-toggler-icon::after {
+  top: 10px;
 }
 
-/* Button Styles */
-.btn-animate {
+/* Navbar Toggle Animation */
+.navbar-toggler.open .navbar-toggler-icon {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler.open .navbar-toggler-icon::before,
+.navbar-toggler.open .navbar-toggler-icon::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* 🔹 Navbar Links */
+.nav-list {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-item {
+  display: inline-block;
+}
+
+.nav-link {
+  color: white !important;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
   position: relative;
-  padding: 12px 30px;
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-}
-
-.btn-animate:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Button Specific Colors */
-.btn-danger {
-  background: #e74c3c;
-}
-
-.btn-info {
-  background: #1abc9c;
-}
-
-/* Responsive Styles */
-@media (max-width: 992px) {
-  #home h1 {
-    font-size: 3rem;
-  }
-
-  #home h2 {
-    font-size: 2rem;
-  }
-
-  #home h3 {
-    font-size: 1.3rem;
-  }
-
-  /* Image styling for smaller screens */
-  #home img {
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 576px) {
-  #home h1 {
-    font-size: 2.5rem;
-  }
-
-  #home h2 {
-    font-size: 1.8rem;
-  }
-
-  #home h3 {
-    font-size: 1.2rem;
-  }
-
-  /* Image styling for smaller screens */
-  #home img {
-    max-width: 100%;
-  }
-
-  .btn-animate {
-    font-size: 16px;
-    padding: 10px 25px;
-  }
-}
-
-/* Contact Me Button Styles */
-.btn-contact {
-  background: #8e44ad; /* Purple Color */
-  color: white;
-  padding: 12px 30px;
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 50px;
-  transition: all 0.3s ease;
 }
 
 /* Hover Effect */
-.btn-contact:hover {
-  background: #9b59b6; /* Lighter Purple on Hover */
-  transform: scale(1.1);
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-}
-/* Navigation Links */
-.nav-menu a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  position: relative;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: color 0.4s ease, background-color 0.4s ease;
+.nav-link:hover {
+  color: #ff4c60 !important;
 }
 
-/* Hover Effects */
-.nav-menu a:hover {
-  color: #f39c12; /* Golden Yellow */
-  background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
-  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
-}
-
-/* Underline Hover Effect */
-.nav-menu a::after {
+/* Underline Animation */
+.nav-link::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
+  left: 50%;
+  bottom: -3px;
+  width: 0%;
   height: 2px;
-  background-color: #f39c12; /* Golden Yellow */
-  transition: width 0.3s ease-in-out;
+  background-color: #ff4c60;
+  transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
 }
 
-.nav-menu a:hover::after {
-  width: 100%; /* Underline expands on hover */
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Active Link Glow */
+.nav-link.active {
+  color: #ff4c60 !important;
+  text-shadow: 0 0 8px rgba(255, 76, 96, 0.5);
+}
+
+/* 🔹 Contact Button */
+.btn-contact {
+  background-color: #ff4c60;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-contact:hover {
+  background-color: #e33b4d;
+  transform: scale(1.05);
+}
+
+/* 🔹 Hero Section */
+.hero-section {
+  background: linear-gradient(to right, #1e1e1e, #121212);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.intro-text {
+  font-size: 18px;
+}
+
+.main-heading {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.name-heading {
+  font-size: 36px;
+  color: #ff4c60;
+  font-weight: bold;
+}
+
+.role-heading {
+  font-size: 24px;
+  color: #ccc;
+}
+
+/* 🔹 Button Styles */
+.button-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center !important;
+  padding: 40px 0px;
+}
+
+.btn-resume,
+.btn-about {
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* Resume Button */
+.btn-resume {
+  background-color: #ff4c60;
+  margin-right: 30px;
+}
+
+/* About Button */
+.btn-about {
+  background-color: #1e90ff;
+}
+
+/* Hover Effect: Scale & Glow */
+.btn-resume:hover,
+.btn-about:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Click Effect: Slight Shrink */
+.btn-resume:active,
+.btn-about:active {
+  transform: scale(0.95);
+}
+
+/* 🔹 Glowing Border Animation */
+.btn-resume::before,
+.btn-about::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 80%);
+  transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.4s ease-out;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+/* Activate Glow on Hover */
+.btn-resume:hover::before,
+.btn-about:hover::before {
+  width: 120%;
+  height: 120%;
+  opacity: 1;
+}
+
+/* 🔹 Button Animation (Bounce on Load) */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.btn-resume,
+.btn-about {
+  animation: bounce 1.5s ease-in-out infinite alternate;
+}
+
+/* 🔹 Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    background: rgba(20, 20, 20, 0.9);
+    padding: 20px;
+    text-align: center;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .button-group {
+    display: flex;
+    gap: 40px !important;
+    justify-content: center !important;
+    margin-top: 20px;
+    padding: 40px 180px;
+  }
+}
+@media screen and (min-width:300px) and (max-width:330px) {
+  .button-group {
+   padding: 20px !important;
+  }
+}
+@media screen and (min-width:370px) and (max-width:390px) {
+  .button-group {
+   padding: 50px !important;
+  }
+}
+@media screen and (min-width:400px) and (max-width:500px) {
+  .button-group {
+   padding: 90px !important;
+  }
 }

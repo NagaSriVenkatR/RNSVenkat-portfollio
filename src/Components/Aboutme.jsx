@@ -27,7 +27,7 @@ function Aboutme() {
               optimized web applications.
             </p>
             {/* LinkedIn & GitHub Buttons with Motion */}
-            <div className="social-links mt-4">
+            <div className="social-links mt-4 d-none d-lg-table-cell">
               <motion.a
                 href="https://www.linkedin.com/in/nagasri-venkat-r-a50402217/"
                 target="_blank"
@@ -40,7 +40,7 @@ function Aboutme() {
                 }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
-                <FaLinkedin size={30}/> LinkedIn
+                <FaLinkedin size={30} /> LinkedIn
               </motion.a>
               <motion.a
                 href="https://github.com/NagaSriVenkatR"
@@ -55,6 +55,36 @@ function Aboutme() {
                 transition={{ type: "spring", stiffness: 200 }}
               >
                 <FaGithub size={30} /> GitHub
+              </motion.a>
+            </div>
+            <div className="social-links mt-4 d-table-cell d-lg-none">
+              <motion.a
+                href="https://www.linkedin.com/in/nagasri-venkat-r-a50402217/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-linkedin me-3"
+                whileHover={{
+                  scale: 1.1,
+                  boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.3)",
+                  backgroundColor: "#0077b5",
+                }}
+                transition={{ type: "spring", stiffness: 200 }}
+              >
+                <FaLinkedin size={30} /> 
+              </motion.a>
+              <motion.a
+                href="https://github.com/NagaSriVenkatR"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-github"
+                whileHover={{
+                  scale: 1.1,
+                  boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.3)",
+                  backgroundColor: "#333",
+                }}
+                transition={{ type: "spring", stiffness: 200 }}
+              >
+                <FaGithub size={30} /> 
               </motion.a>
             </div>
           </div>

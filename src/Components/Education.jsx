@@ -49,6 +49,7 @@ function Education() {
                   <h5 className="card-title">
                     Board Of Secondary School Of Education Of Andhra Pradesh
                   </h5>
+                  <p>MPC</p>
                   <p className="card-text">2016-2017</p>
                   <p className="card-text">
                     <strong>CGPA:</strong> 7.8
