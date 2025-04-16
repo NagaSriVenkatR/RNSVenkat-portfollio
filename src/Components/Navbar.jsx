@@ -86,6 +86,9 @@ function CustomNavbar() {
                       offset={-50} // Offset for navbar height
                       duration={500} // Smooth scrolling duration (in ms)
                       onClick={() => setIsMenuOpen(false)}
+                      style={{
+                        cursor: "pointer",
+                      }}
                     >
                       {item}
                     </Link>
