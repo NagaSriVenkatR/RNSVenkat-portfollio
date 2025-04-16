@@ -3,7 +3,7 @@ import { Link } from "react-scroll"; // Import from react-scroll
 import LOGO from "../Assets/v.jpg";
 import "./navbar.css";
 import PASS from "../Assets/Passportsize Photo1.jpg";
-import RESUME from "../Assets/RNSVenkat-CV.pdf";
+import RESUME from "../Assets/RNSVenkat_CV.pdf";
 
 function CustomNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
