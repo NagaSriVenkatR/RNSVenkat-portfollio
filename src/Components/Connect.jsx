@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaPaperPlane } from "react-icons/fa"; // Importing icon
+import { FaPaperPlane } from "react-icons/fa";
 import "./connect.css";
 
 function Connect() {
@@ -44,63 +44,74 @@ function Connect() {
   };
 
   return (
-    <section id="contact" className="connect-section">
-      <div className="connect-container mt-5">
-        <form onSubmit={handleSubmit}>
-          <h2 className="connect-title mt-5">Contact Me</h2>
-          <div className="mb-3">
-            <label htmlFor="name" className="form-label">
-              Name
-            </label>
-            <input
-              type="text"
-              className={`connect-input ${errors.name ? "is-invalid" : ""}`}
-              id="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-            {errors.name && <div className="connect-error">{errors.name}</div>}
-          </div>
+    <section id="contact" className="connect-section py-5">
+      <div className="container">
+        <h2 className="section-title text-center mb-5">Contact Me</h2>
+        <div className="row justify-content-center">
+          <div className="col-md-8">
+            <form onSubmit={handleSubmit} className="connect-form">
+              <div className="mb-3">
+                <label htmlFor="name" className="form-label">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  className={`form-control ${errors.name ? "is-invalid" : ""}`}
+                  id="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+                {errors.name && (
+                  <div className="invalid-feedback">{errors.name}</div>
+                )}
+              </div>
 
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">
-              Email
-            </label>
-            <input
-              type="email"
-              className={`connect-input ${errors.email ? "is-invalid" : ""}`}
-              id="email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-            />
-            {errors.email && (
-              <div className="connect-error">{errors.email}</div>
-            )}
-          </div>
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  className={`form-control ${errors.email ? "is-invalid" : ""}`}
+                  id="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+                {errors.email && (
+                  <div className="invalid-feedback">{errors.email}</div>
+                )}
+              </div>
 
-          <div className="mb-3">
-            <label htmlFor="message" className="form-label">
-              Message
-            </label>
-            <textarea
-              className={`connect-input ${errors.message ? "is-invalid" : ""}`}
-              id="message"
-              rows="3"
-              placeholder="Your Message"
-              value={formData.message}
-              onChange={handleChange}
-            ></textarea>
-            {errors.message && (
-              <div className="connect-error">{errors.message}</div>
-            )}
-          </div>
+              <div className="mb-4">
+                <label htmlFor="message" className="form-label">
+                  Message
+                </label>
+                <textarea
+                  className={`form-control ${
+                    errors.message ? "is-invalid" : ""
+                  }`}
+                  id="message"
+                  rows="4"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleChange}
+                ></textarea>
+                {errors.message && (
+                  <div className="invalid-feedback">{errors.message}</div>
+                )}
+              </div>
 
-          <button type="submit" className="connect-button">
-            <FaPaperPlane /> Send WhatsApp Message
-          </button>
-        </form>
+              <div className="text-center">
+                <button type="submit" className="btn btn-primary">
+                  <FaPaperPlane className="me-2" />
+                  Send WhatsApp Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -9,9 +9,10 @@ function Aboutme() {
     <motion.div
       id="about"
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.75, ease: "easeOut" }}
       className="about-section"
+      viewport={{ once: true }} // Trigger animation once in view
     >
       <div className="container">
         <div className="row align-items-center">
@@ -19,21 +20,28 @@ function Aboutme() {
           <div className="col-lg-8 p-5 mt-5">
             <h2 className="about-title">About Me</h2>
             <p className="about-text">
-              Hello! I'm a passionate front-end developer skilled in creating
-              interactive and responsive web applications. I enjoy solving
-              problems and bringing creative designs to life using technologies
-              like HTML, CSS, JavaScript, and React.js. I'm always eager to
-              learn new technologies and improve my skills to create better and
-              optimized web applications.
+              Hi, I'm Naga Sri Venkat R, a dedicated front-end developer with a
+              focus on building responsive, high-performance web applications. I
+              specialize in technologies like HTML, CSS, JavaScript, and
+              React.js, and I'm passionate about crafting seamless user
+              experiences.
+              <br />
+              <br />
+              I’m constantly improving my skills to stay ahead in the field of
+              web development, from mastering React.js to improving web
+              performance and accessibility. I strive to create intuitive and
+              accessible interfaces that deliver value to users and clients
+              alike.
             </p>
-            {/* LinkedIn & GitHub Buttons with Motion */}
+
+            {/* Social Media Links with Professional Hover Effects */}
             <div className="social-links mt-4">
               <motion.a
                 href="https://www.linkedin.com/in/nagasri-venkat-r-a50402217/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-linkedin"
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05, backgroundColor: "#0077b5" }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
                 <FaLinkedin size={30} /> LinkedIn
@@ -43,7 +51,7 @@ function Aboutme() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-github"
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05, backgroundColor: "#333" }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
                 <FaGithub size={30} /> GitHub
@@ -58,7 +66,7 @@ function Aboutme() {
               alt="Profile"
               className="passport"
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
             />
           </div>

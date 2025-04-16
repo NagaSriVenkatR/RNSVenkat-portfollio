@@ -1,24 +1,24 @@
 import React from "react";
 import quick from "../Assets/quickreciept.png";
-import srit from "../Assets/logo.png";
+import srit from "../Assets/grievance.jpg";
 import "./Project.css";
 
 function Projects() {
   return (
-    <section id="projects" className="py-5">
+    <section id="projects" className="py-5 bg-light">
       <div className="container">
-        <h2 className="text-center mb-5 mt-5">Projects</h2>
+        <h2 className="text-center mb-5 mt-5 text-dark">Projects</h2>
         <div className="row">
           {/* Quick Receipt Project */}
           <div className="col-lg-6 col-md-12 mb-4">
-            <div className="card shadow-sm border-0">
+            <div className="card shadow-lg border-0 rounded-3">
               <img
                 src={quick}
-                className="card-img-top img-fluid"
+                className="card-img-top img-fluid rounded-top"
                 alt="Quick Receipt Project"
               />
               <div className="card-body">
-                <h5 className="card-title">Quick Receipt POS</h5>
+                <h5 className="card-title text-dark">Quick Receipt POS</h5>
                 <h6 className="card-subtitle mb-3 text-muted">
                   Ebrain Technology
                 </h6>
@@ -26,15 +26,29 @@ function Projects() {
                   Developed a Quick Receipt Application with:
                 </p>
                 <ul>
-                  <li>Responsive UI with React and Bootstrap.</li>
-                  <li>RESTful API integration for secure data handling.</li>
                   <li>
-                    Real-time calculations, PDF generation, and tax automation.
+                    Responsive UI with React.js and Bootstrap for a seamless
+                    experience across all devices.
                   </li>
-                  <li>Mobile-friendly and optimized for multiple devices.</li>
-                  <li>Role-based authentication for different user access.</li>
                   <li>
-                    Multi-currency support and offline mode for accessibility.
+                    RESTful API integration ensuring secure data handling and
+                    smooth communication between front-end and back-end.
+                  </li>
+                  <li>
+                    Real-time calculations, PDF generation, and automated tax
+                    calculations for accurate and efficient receipt management.
+                  </li>
+                  <li>
+                    Fully mobile-friendly and optimized for use on various
+                    screen sizes, providing a consistent experience.
+                  </li>
+                  <li>
+                    Implemented role-based authentication to ensure appropriate
+                    access levels for users.
+                  </li>
+                  <li>
+                    Multi-currency support and offline mode for greater
+                    flexibility and accessibility.
                   </li>
                   <li>
                     <strong>Tech Stack:</strong> React.js, Bootstrap, Redux
@@ -43,11 +57,19 @@ function Projects() {
                 </ul>
                 <a
                   href="https://quick-receipt-pos.web.app/"
-                  className="btn btn-primary btn-block"
+                  className="btn btn-primary btn-block mt-3"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   View Project
+                </a>
+                <a
+                  href="https://github.com/EbrainTechnologies/quickreceipt-frontend"
+                  className="btn btn-secondary btn-block mt-3 ms-3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View GitHub Repository
                 </a>
               </div>
             </div>
@@ -55,15 +77,17 @@ function Projects() {
 
           {/* Grievance Management System */}
           <div className="col-lg-6 col-md-12 mb-4">
-            <div className="card shadow-sm border-0">
+            <div className="card shadow-lg border-0 rounded-3">
               <img
                 src={srit}
-                className="card-img-top img-fluid mx-auto d-block srit-logo"
+                className="card-img-top img-fluid mx-auto d-block srit-logo rounded-top mt-5"
                 alt="Grievance Management System"
-                style={{ width: "40%" }}
+                style={{ width: "50%" }}
               />
               <div className="card-body">
-                <h5 className="card-title">Grievance Management System App</h5>
+                <h5 className="card-title text-dark">
+                  Grievance Management App
+                </h5>
                 <h6 className="card-subtitle mb-3 text-muted">
                   Srinivasa Ramanujan Institute of Technology
                 </h6>

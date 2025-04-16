@@ -25,6 +25,19 @@
 .card-text {
   font-size: 1rem;
 }
+.edu-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hover-effect {
+  cursor: pointer;
+}
+
 
 /* Responsive Text Alignment */
 @media (max-width: 768px) {
