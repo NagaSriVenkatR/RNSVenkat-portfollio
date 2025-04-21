@@ -3,6 +3,7 @@ import { Link } from "react-scroll"; // Import from react-scroll
 import LOGO from "../Assets/v.jpg";
 import "./navbar.css";
 import PASS from "../Assets/Passportsize Photo1.jpg";
+import { motion } from "framer-motion";
 import RESUME from "../Assets/RNSVenkat_CV.pdf";
 
 function CustomNavbar() {
@@ -113,35 +114,133 @@ function CustomNavbar() {
       </nav>
 
       {/* Hero Section with Motion */}
-      <section id="home" className="hero-section">
+      <section id="home" className="hero-section  parallax-bg">
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6 text-lg-start text-center mt-3">
-              <p className="intro-text">Welcome to my Portfolio</p>
-              <h1 className="main-heading">Hi there!</h1>
-              <h2 className="name-heading">I'm Naga Sri Venkat R</h2>
-              <h3 className="role-heading">Frontend Developer</h3>
+          <div className="row align-items-center text-center">
+            <div className="col-lg-6 text-lg-start text-center mt-3 justify-content-center">
+              <motion.p
+                className="intro-text text-center floating"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                Welcome to my Portfolio
+              </motion.p>
 
-              <div className="button-group d-md-flex d-none justify-content-center">
-                <a href={RESUME} download className="btn-resume">
+              <motion.h1
+                className="main-heading text-center floating"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                Hi there!
+              </motion.h1>
+
+              <motion.h2
+                className="name-heading text-center floating"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                I'm Naga Sri Venkat R
+              </motion.h2>
+
+              <motion.h3
+                className="role-heading text-center floating"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                Frontend Developer
+              </motion.h3>
+
+              {/* 💻 Tech Stack Badges */}
+              <motion.div
+                className="tech-stack-badges mt-3 floating"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+              >
+                <span className="badge">HTML</span>
+                <span className="badge">CSS</span>
+                <span className="badge">JavaScript</span>
+                <span className="badge">React.js</span>
+                <span className="badge">Redux</span>
+                <span className="badge">Redux-Saga</span>
+                <span className="badge">Bootstrap</span>
+              </motion.div>
+
+              {/* ✨ Inspirational Quote */}
+              <motion.p
+                className="quote-text mt-4 floating"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1.1 }}
+              >
+                “Code is not just code, it's a craft that connects ideas with
+                reality.”
+              </motion.p>
+
+              {/* 🎯 Buttons for Resume & About Me */}
+              <motion.div
+                className="button-group d-md-flex d-none justify-content-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.3 }}
+              >
+                <a
+                  href={RESUME}
+                  download
+                  className="btn-resume"
+                  aria-label="Download Resume"
+                >
                   📄 Resume
                 </a>
-                <Link to="about" smooth={true} className="btn-about">
+                <Link
+                  to="about"
+                  smooth={true}
+                  className="btn-about"
+                  aria-label="Go to About Section"
+                >
                   ⬇️ About Me
                 </Link>
-              </div>
-              <div className="button-group d-flex d-md-none justify-content-center">
-                <a href={RESUME} download className="btn-resume">
+              </motion.div>
+
+              <motion.div
+                className="button-group d-flex d-md-none justify-content-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.4 }}
+              >
+                <a
+                  href={RESUME}
+                  download
+                  className="btn-resume"
+                  aria-label="Download Resume"
+                >
                   📄
                 </a>
-                <Link to="about" smooth={true} className="btn-about">
+                <Link
+                  to="about"
+                  smooth={true}
+                  className="btn-about"
+                  aria-label="Go to About Section"
+                >
                   ⬇️
                 </Link>
-              </div>
+              </motion.div>
             </div>
 
+            {/* 👤 Profile Image */}
             <div className="col-lg-6 text-center mt-3">
-              <img src={PASS} alt="Profile" className="profile-img" />
+              <motion.img
+                src={PASS}
+                alt="Profile of Naga Sri Venkat R"
+                className="profile-img floating"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+              />
             </div>
           </div>
         </div>

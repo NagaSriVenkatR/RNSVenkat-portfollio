@@ -20,18 +20,17 @@ function Aboutme() {
           <div className="col-lg-8 p-5 mt-5">
             <h2 className="about-title">About Me</h2>
             <p className="about-text">
-              Hi, I'm Naga Sri Venkat R, a dedicated front-end developer with a
-              focus on building responsive, high-performance web applications. I
-              specialize in technologies like HTML, CSS, JavaScript, and
-              React.js, and I'm passionate about crafting seamless user
-              experiences.
+              Hi, I'm Naga Sri Venkat R — a Frontend Developer with a passion
+              for building responsive, user-centric web applications. I
+              specialize in HTML, CSS, JavaScript, React.js, and Redux-Saga, and
+              I focus on creating clean, accessible interfaces that offer smooth
+              and engaging user experiences.
               <br />
               <br />
-              I’m constantly improving my skills to stay ahead in the field of
-              web development, from mastering React.js to improving web
-              performance and accessibility. I strive to create intuitive and
-              accessible interfaces that deliver value to users and clients
-              alike.
+              I'm always learning and evolving, from enhancing React components
+              and managing complex state with Redux-Saga to improving
+              performance and accessibility. I aim to deliver high-quality,
+              scalable front-end solutions that make a real impact.
             </p>
 
             {/* Social Media Links with Professional Hover Effects */}
