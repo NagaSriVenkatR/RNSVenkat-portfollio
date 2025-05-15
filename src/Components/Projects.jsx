@@ -1,16 +1,51 @@
 import React from "react";
+import { motion } from "framer-motion";
 import quick from "../Assets/quickreciept.png";
 import srit from "../Assets/grievance.jpg";
 import "./Project.css";
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
+
 function Projects() {
   return (
-    <section id="projects" className="py-5 bg-light">
+    <motion.section
+      id="projects"
+      className="py-5 bg-light"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="container">
-        <h2 className="text-center mb-5 mt-5 text-dark">Projects</h2>
+        <motion.h2
+          className="text-center mb-5 mt-5 text-dark"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Projects
+        </motion.h2>
         <div className="row">
           {/* Quick Receipt Project */}
-          <div className="col-lg-6 col-md-12 mb-4">
+          <motion.div
+            className="col-lg-6 col-md-12 mb-4"
+            custom={0}
+            variants={cardVariants}
+            whileHover={{
+              scale: 1.02,
+              boxShadow: "0 8px 24px rgba(0,0,0,0.2)",
+            }}
+          >
             <div className="card shadow-lg border-0 rounded-3">
               <img
                 src={quick}
@@ -39,17 +74,13 @@ function Projects() {
                     calculations for accurate and efficient receipt management.
                   </li>
                   <li>
-                    Fully mobile-friendly and optimized for use on various
-                    screen sizes, providing a consistent experience.
+                    Fully mobile-friendly and optimized for various screen
+                    sizes.
                   </li>
                   <li>
-                    Implemented role-based authentication to ensure appropriate
-                    access levels for users.
+                    Implemented role-based authentication for user-level access.
                   </li>
-                  <li>
-                    Multi-currency support and offline mode for greater
-                    flexibility and accessibility.
-                  </li>
+                  <li>Multi-currency support and offline mode included.</li>
                   <li>
                     <strong>Tech Stack:</strong> React.js, Bootstrap, Redux
                     Saga, Firebase, Java, MySQL
@@ -73,10 +104,18 @@ function Projects() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Grievance Management System */}
-          <div className="col-lg-6 col-md-12 mb-4">
+          {/* Grievance Management Project */}
+          <motion.div
+            className="col-lg-6 col-md-12 mb-4"
+            custom={1}
+            variants={cardVariants}
+            whileHover={{
+              scale: 1.02,
+              boxShadow: "0 8px 24px rgba(0,0,0,0.2)",
+            }}
+          >
             <div className="card shadow-lg border-0 rounded-3">
               <img
                 src={srit}
@@ -100,7 +139,7 @@ function Projects() {
                   <li>
                     Analytics for institutions to identify trends and issues.
                   </li>
-                  <li>User-friendly UI designed for student and admin use.</li>
+                  <li>User-friendly UI for both students and admins.</li>
                   <li>Secure authentication and data protection.</li>
                   <li>
                     <strong>Tech Stack:</strong> Java, Android Studio, Kotlin,
@@ -109,10 +148,10 @@ function Projects() {
                 </ul>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

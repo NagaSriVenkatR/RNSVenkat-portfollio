@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./connect.css";
 
 function Connect() {
@@ -8,11 +11,7 @@ function Connect() {
     email: "",
     message: "",
   });
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [errors, setErrors] = useState({ name: "", email: "", message: "" });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -39,6 +38,8 @@ function Connect() {
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     window.open(whatsappURL, "_blank");
 
+    toast.success("WhatsApp message window opened!");
+
     setFormData({ name: "", email: "", message: "" });
     setErrors({ name: "", email: "", message: "" });
   };
@@ -49,7 +50,13 @@ function Connect() {
         <h2 className="section-title text-center mb-5">Contact Me</h2>
         <div className="row justify-content-center">
           <div className="col-md-8">
-            <form onSubmit={handleSubmit} className="connect-form">
+            <motion.form
+              onSubmit={handleSubmit}
+              className="connect-form"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
                   Name
@@ -104,15 +111,21 @@ function Connect() {
               </div>
 
               <div className="text-center">
-                <button type="submit" className="btn btn-primary">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  type="submit"
+                  className="btn btn-primary"
+                >
                   <FaPaperPlane className="me-2" />
                   Send WhatsApp Message
-                </button>
+                </motion.button>
               </div>
-            </form>
+            </motion.form>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 }

@@ -26,39 +26,67 @@ const skillsData = [
   { name: "Java", icon: <FaJava className="skill-icon" color="#F89820" /> },
 ];
 
+// Animation variants
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
+
 function Skills() {
   return (
-    <section id="skills" className="skills-section">
+    <motion.section
+      id="skills"
+      className="skills-section"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+    >
       <div className="container">
         <motion.h2
           className="skills-title"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8 }}
         >
           Skills
         </motion.h2>
+
         <div className="row">
           {skillsData.map((skill, index) => (
-            <div key={index} className="col-md-3 col-sm-6 mb-4">
-              <motion.div
-                className="skill-card"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{
-                  scale: 1.1,
-                  boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.3)",
-                }}
-              >
+            <motion.div
+              key={index}
+              className="col-md-3 col-sm-6 mb-4"
+              variants={cardVariants}
+              whileHover={{
+                scale: 1.1,
+                boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.3)",
+              }}
+              transition={{ type: "spring", stiffness: 150 }}
+            >
+              <div className="skill-card text-center">
                 {skill.icon}
-                <h5 className="skill-title">{skill.name}</h5>
-              </motion.div>
-            </div>
+                <h5 className="skill-title mt-2">{skill.name}</h5>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
