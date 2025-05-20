@@ -46,7 +46,7 @@ function Connect() {
 
   return (
     <section id="contact" className="connect-section py-5">
-      <div className="container">
+      <div className="container mt-5">
         <h2 className="section-title text-center mb-5">Contact Me</h2>
         <div className="row justify-content-center">
           <div className="col-md-8">

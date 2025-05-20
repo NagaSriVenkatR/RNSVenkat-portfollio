@@ -2,15 +2,17 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-scroll";
 import LOGO from "../Assets/v.jpg";
 import PASS from "../Assets/Passportsize Photo1.jpg";
-import RESUME from "../Assets/RNSVenkat_CV.pdf";
+import RESUME from "../Assets/RNSVenkat-Latest CV.pdf";
 import "./navbar.css";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { RiMessage2Line } from "react-icons/ri";
+
 
 function CustomNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState("/");
 
   const navLinks = [
     "Home",
@@ -23,25 +25,34 @@ function CustomNavbar() {
 
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 50);
-    const sections = navLinks.map((link) => link.toLowerCase());
-    for (let i = 0; i < sections.length; i++) {
-      const section = document.getElementById(sections[i]);
+
+    let currentSection = "home";
+    let minDistance = Infinity;
+
+    navLinks.forEach((link) => {
+      const sectionId = link.toLowerCase();
+      const section = document.getElementById(sectionId);
       if (section) {
         const rect = section.getBoundingClientRect();
-        if (rect.top <= 100 && rect.bottom >= 100) {
-          setActiveSection(sections[i]);
-          break;
+        const distance = Math.abs(rect.top);
+        if (distance < minDistance) {
+          minDistance = distance;
+          currentSection = sectionId;
         }
       }
-    }
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      const rect = contactSection.getBoundingClientRect();
+    });
+
+    const contact = document.getElementById("contact");
+    if (contact) {
+      const rect = contact.getBoundingClientRect();
       if (rect.top <= 100 && rect.bottom >= 100) {
-        setActiveSection("contact");
+        currentSection = "contact";
       }
     }
+
+    setActiveSection(currentSection);
   }, [navLinks]);
+  
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -57,7 +68,7 @@ function CustomNavbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="container">
+        <div className="container-fluid">
           <a className="navbar-brand" href="#home">
             <motion.img
               src={LOGO}
@@ -105,6 +116,7 @@ function CustomNavbar() {
                         fontSize: "1.2rem",
                       }}
                       onClick={() => setIsMenuOpen(false)}
+                      onSetActive={() => setActiveSection(sectionId)}
                     >
                       {item}
                     </Link>
@@ -127,9 +139,13 @@ function CustomNavbar() {
                 color: "white",
                 cursor: "pointer",
                 fontSize: "1.2rem",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px", // spacing between icon and text
               }}
             >
-              Contact Me 📩
+              <RiMessage2Line size={18} />
+              Connect
             </Link>
           </div>
         </div>
@@ -239,7 +255,7 @@ function CustomNavbar() {
                 <a href={RESUME} download className="btn-resume">
                   📄 Resume
                 </a>
-                <Link to="about" smooth={true} className="btn-about">
+                <Link to="about" smooth={true} className="btn-about" style={{cursor: "pointer"}}>
                   ⬇️ About Me
                 </Link>
               </motion.div>

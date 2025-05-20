@@ -15,7 +15,7 @@ function Aboutme() {
       viewport={{ once: true }}
     >
       <div className="container">
-        <div className="row align-items-center">
+        <div className="row align-items-center mt-2">
           {/* Text Content Section */}
           <div className="col-lg-8 p-5 mt-5">
             <motion.h2

@@ -7,7 +7,7 @@
 }
 
 /* Navbar Styling */
-.navbar {
+/* .navbar {
   background: rgba(197, 191, 191, 0.8);
   padding: 15px 20px;
   transition: all 0.3s ease-in-out;
@@ -16,17 +16,22 @@
 
 .navbar.scrolled {
   background: rgba(10, 10, 10, 0.95);
-}
-/* Default navbar with gradient */
+} */
+/* Professional Gradient Navbar */
 .navbar {
-  background: linear-gradient(45deg, #4b6cb7, #182848); /* Blue gradient for professionalism */
-  color: #fff;
+  background: linear-gradient(135deg, #4b6cb7, #182848); /* Smoother diagonal blend */
+  color: #ffffff;
   padding: 12px 20px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  backdrop-filter: blur(8px); /* Modern blurred effect */
-  border-bottom: 1px solid #444;
+  backdrop-filter: blur(10px); /* Softer blur */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Soft shadow for elevation */
+  z-index: 999;
 }
+
+/* On scroll - darker solid background */
+
 
 /* Navbar on scroll (Smooth gradient change) */
 .navbar.scrolled {
@@ -111,24 +116,36 @@
 }
 
 .nav-link:hover,
-.nav-link:focus {
-  color: #ff4c60 !important;
-}
-
-/* Contact Button */
+/* Contact Button - Default (Slate Gray) */
 .btn-contact {
-  background-color: #ff4c60;
+  background-color: #4169e1; /* Professional slate gray */
   color: white;
   padding: 8px 15px;
   border-radius: 5px;
   text-decoration: none;
   margin-left: 20px;
   transition: background 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  letter-spacing: 0.5px;
 }
 
 .btn-contact:hover {
-  background-color: #e33b4d;
+  background-color: 	#2f4bd4; /* Darker shade on hover */
 }
+
+/* Dark Theme for Tablets and Mobiles (less than 1024px) */
+@media (max-width: 1024px) {
+  .btn-contact {
+    background-color: #1c1c1e; /* Dark charcoal for dark theme */
+    color: #f5f5f5;
+    border: 1px solid #444;
+  }
+
+  .btn-contact:hover {
+    background-color: #333;
+  }
+}
+
 
 /* Hero Section */
 .hero-section {
@@ -289,21 +306,21 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
+/*  */
 /* 🔹 Navbar Styling */
-.navbar {
-  background: rgba(20, 20, 20, 0.85); /* Semi-transparent background */
+/* .navbar {
+  background: rgba(20, 20, 20, 0.85); 
   padding: 15px 20px;
   transition: all 0.3s ease-in-out;
   backdrop-filter: blur(8px);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
+} */
 
 /* Navbar on Scroll */
-.navbar.scrolled {
+/* .navbar.scrolled {
   background: rgba(10, 10, 10, 0.95);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
+} */
 
 /* 🔹 Navbar Logo */
 .navbar-logo {
@@ -404,20 +421,6 @@
 }
 
 /* 🔹 Contact Button */
-.btn-contact {
-  background-color: #ff4c60;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-left: 20px;
-  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
-}
-
-.btn-contact:hover {
-  background-color: #e33b4d;
-  transform: scale(1.05);
-}
 
 /* 🔹 Hero Section */
 .hero-section {
@@ -537,7 +540,6 @@
   }
 
   .nav-menu {
-    display: none;
     flex-direction: column;
     position: absolute;
     width: 100%;
@@ -657,3 +659,8 @@
   z-index: 1;
 }
 
+@media screen and (min-width: 769px){
+  .navbar-toggler{
+    display: none !important;
+  }
+}

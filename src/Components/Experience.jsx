@@ -90,7 +90,7 @@ function Experience() {
                 </motion.ul>
 
                 <p className="card-text text-muted">
-                  <strong>MAY 2024 - Current</strong>
+                  <strong>MAY 2024 - MAY 2025</strong>
                 </p>
               </div>
             </div>
